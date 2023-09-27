@@ -1,14 +1,14 @@
 # kata-walk-to-the-wall
 
-Dinovena kata per l'especialitat fullstackPHP 27-9-23.
+Dinovena kata per l'especialitat fullstackPHP 28-9-23.
 
 També es tracta d'un petit videojoc. En aquest videjoc tindrem:
 
-P...#...
-.##...#.
-####....
-######..
-...##...
+P...#...  
+.##...#.  
+####....  
+######..  
+...##...  
 
 Un tauler de 8 x 5 caselles. En aquest tauler:
 
