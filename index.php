@@ -13,7 +13,6 @@ while($move != Move::EXIT) {
     $move = readline();
     if(isRightMove($move)) {
         $move = generateMove(intval($move));
-        var_dump($move);
     }
 }
 
