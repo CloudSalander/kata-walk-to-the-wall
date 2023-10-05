@@ -1,6 +1,6 @@
 # kata-walk-to-the-wall
 
-Dinovena kata per l'especialitat fullstackPHP 28-9-23.
+Dinovena kata per l'especialitat fullstackPHP 5-10-23.
 
 També es tracta d'un petit videojoc. En aquest videjoc tindrem:
 
