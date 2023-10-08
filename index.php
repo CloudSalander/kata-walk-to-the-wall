@@ -4,6 +4,7 @@ TO-DO:
 1- Rethink input data to A,S,W,D or(even better) arrows.
 2- Improve data display. Maybe Unicode? 
 3- Refactor, maybe some index data a ¿Game? class.
+4- Timer could be an asynchronous process.
 */
 define("GAME_MESSAGE","C'mon! Let's move!");
 define("AVAILABLE_MOVES", ['0-EXIT','1-Up','2-Down','3-Left','4-Right']);
