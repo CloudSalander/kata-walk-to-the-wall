@@ -6,6 +6,7 @@ define("BOARD_COLUMNS",8);
 
 include_once('class/Move.php');
 include_once('class/Board.php');
+include_once('class/Player.php');
 
 $move = Move::UP;
 $board = new Board(BOARD_ROWS,BOARD_COLUMNS);
