@@ -25,7 +25,6 @@ class Player {
 	}
 
 	public function moveDown(): void {
-		echo "DWON".PHP_EOL;
 		 ++$this->x;
 	}
 

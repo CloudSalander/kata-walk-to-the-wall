@@ -12,7 +12,7 @@ $move = Move::UP;
 $board = new Board(BOARD_ROWS,BOARD_COLUMNS);
 
 
-while($move != Move::EXIT) {
+while($move != Move::EXIT && !$board->gameIsOver()) {
     writeAvailableMoves();
     $move = readline();
     if(isRightMove($move)) {

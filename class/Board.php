@@ -6,7 +6,8 @@ class Board {
 	private const WALL_SQUARE =  "#"; 
 	private const PLAYER_SQUARE = "P";
 	private const WALL_FACTOR = 1;
-	private const DEFAULT_PLAYER_NAME = "Theseus"; 
+	private const DEFAULT_PLAYER_NAME = "Theseus";
+	private const VICTORY_MSG = "You won!"; 
 	
 	private int $rows;
 	private int $columns;
@@ -109,6 +110,14 @@ class Board {
 		$char_to_print = ".";
 		if($random <= self::WALL_FACTOR) $char_to_print = self::WALL_SQUARE;
 		return $char_to_print;
+	}
+
+	public function gameIsOver(): bool {
+		if($this->player->getX() == $this->rows-1) {
+			echo self::VICTORY_MSG;
+			return true;
+		}
+		return false;
 	} 
 }
 ?>
