@@ -19,5 +19,21 @@ class Player {
 	public function getY(): int {
 		return $this->y;
 	}
+
+	public function moveUp(): void {
+		--$this->x;
+	}
+
+	public function moveDown(): void {
+		++$this->x;
+	}
+
+	public function moveLeft(): void {
+		--$this->y;
+	}
+
+	public function moveRight(): void {
+		++$this->y;
+	}
 }
 ?>

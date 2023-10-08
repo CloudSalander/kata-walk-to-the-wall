@@ -1,6 +1,6 @@
 <?php
 define("GAME_MESSAGE","C'mon! Let's move!");
-define("AVAILABLE_MOVES", ['0-EXIT','1-Up','2-Down','3-Right','4-Left']);
+define("AVAILABLE_MOVES", ['0-EXIT','1-Up','2-Down','3-Left','4-Right']);
 define("BOARD_ROWS",5);
 define("BOARD_COLUMNS",8);
 
@@ -11,12 +11,13 @@ include_once('class/Player.php');
 $move = Move::UP;
 $board = new Board(BOARD_ROWS,BOARD_COLUMNS);
 
+
 while($move != Move::EXIT) {
     writeAvailableMoves();
     $move = readline();
     if(isRightMove($move)) {
         $move = generateMove(intval($move));
-        $board->draw();
+        $board->play($move);
     }
 }
 
