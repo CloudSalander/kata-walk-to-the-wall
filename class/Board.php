@@ -59,21 +59,36 @@ class Board {
 	private function movePlayer(Move $move): void {
 		switch ($move) {
 			case MOVE::UP:
-				$this->player->moveUp();
+				if($this->canMove(-1,0)) $this->player->moveUp();
 				break;
 			case MOVE::DOWN:
-				$this->player->moveDown($this->rows);
+				if($this->canMove(1,0)) $this->player->moveDown();
 				break;
 			case MOVE::LEFT:
-				$this->player->moveLeft();
+				if($this->canMove(0,-1)) $this->player->moveLeft();
 				break;
 			case MOVE::RIGHT:
-				$this->player->moveRight($this->columns);
+				if($this->canMove(0,1)) $this->player->moveRight();
 				break;
 			default:
 				break;
 		}
 	}
+
+	private function canMove(int $row_variation,int $column_variation): bool {
+		$new_x = $this->player->getX() + $row_variation;
+		$new_y = $this->player->getY() + $column_variation;
+		return $this->isInBoard($new_x,$new_y) && $this->hasNoWallInBox($new_x,$new_y);
+ 	}
+
+ 	private function isInBoard(int $new_x,int $new_y): bool {
+ 		return ($new_x >= 0 and $new_x < $this->rows) && 
+ 			   ($new_y >= 0 and $new_y < $this->columns);
+ 	}
+
+ 	private function hasNoWallInBox(int $new_x,int $new_y): bool {
+ 		return $this->box_values[$new_x][$new_y] !== self::WALL_SQUARE;
+ 	}
 
 	private function draw(): void {
 		for($row = 0; $row < $this->rows; ++$row) {
