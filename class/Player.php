@@ -6,7 +6,7 @@ class Player {
 	private int $x;
 	private int $y;
 
-	public function __construct(string $name){
+	public function __construct(string $name) {
 		$this->name = $name;
 		$this->x = 0;
 		$this->y = 0;
@@ -21,19 +21,39 @@ class Player {
 	}
 
 	public function moveUp(): void {
-		--$this->x;
+		if($this->canMoveUp()) --$this->x;
 	}
 
-	public function moveDown(): void {
-		++$this->x;
+	private function canMoveUp(): bool {;
+		if($this->x - 1 >= 0) return true;
+		return false;
+	}
+
+	public function moveDown(int $rows): void {
+		if($this->canMoveDown($rows)) ++$this->x;
+	}
+
+	private function canMoveDown(int $rows): bool {
+		if($this->x + 1 >= $rows) return false;
+		return true;
 	}
 
 	public function moveLeft(): void {
-		--$this->y;
+		if($this->canMoveLeft()) --$this->y;
 	}
 
-	public function moveRight(): void {
-		++$this->y;
+	private function canMoveLeft(): bool {
+		if($this->y - 1 >= 0) return true;
+		return false;
+	}
+
+	public function moveRight(int $columns): void {
+		if($this->canMoveRight($columns))++$this->y;
+	}
+
+	private function canMoveRight(int $columns): bool {
+		if($this->y + 1 >= $columns) return false;
+		return true;
 	}
 }
 ?>

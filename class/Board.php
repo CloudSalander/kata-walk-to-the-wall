@@ -62,13 +62,13 @@ class Board {
 				$this->player->moveUp();
 				break;
 			case MOVE::DOWN:
-				$this->player->moveDown();
+				$this->player->moveDown($this->rows);
 				break;
 			case MOVE::LEFT:
 				$this->player->moveLeft();
 				break;
 			case MOVE::RIGHT:
-				$this->player->moveRight();
+				$this->player->moveRight($this->columns);
 				break;
 			default:
 				break;
