@@ -5,14 +5,17 @@ define("BOARD_ROWS",5);
 define("BOARD_COLUMNS",8);
 
 include_once('class/Move.php');
+include_once('class/Board.php');
 
 $move = Move::UP;
+$board = new Board(BOARD_ROWS,BOARD_COLUMNS);
 
 while($move != Move::EXIT) {
     writeAvailableMoves();
     $move = readline();
     if(isRightMove($move)) {
         $move = generateMove(intval($move));
+        $board->draw();
     }
 }
 
