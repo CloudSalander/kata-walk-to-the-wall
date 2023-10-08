@@ -2,12 +2,12 @@
 
 class Board {
 	
-	private const FREE_SQUARE = ".";
-	private const WALL_SQUARE =  "#"; 
-	private const PLAYER_SQUARE = "P";
-	private const WALL_FACTOR = 1;
-	private const DEFAULT_PLAYER_NAME = "Theseus";
-	private const VICTORY_MSG = "You won!"; 
+	private const  FREE_SQUARE = ".";
+	private const  WALL_SQUARE =  "#"; 
+	private const  PLAYER_SQUARE = "P";
+	private const  WALL_FACTOR = 1;
+	private const  DEFAULT_PLAYER_NAME = "Theseus";
+	private const  VICTORY_MSG = "You won!"; 
 	
 	private int $rows;
 	private int $columns;
